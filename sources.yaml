@@ -1,0 +1,82 @@
+# Sources for the quantum thesis proposals scraper.
+# Each entry: url (required), name (optional, for logging/DB).
+
+settings:
+  # Re-scrape a URL only if the last successful scrape is older than this.
+  rescrape_after_days: 7
+  # Minimum visible-text length below which the page is considered JS-rendered
+  # and Playwright is used as fallback.
+  min_text_length: 500
+  # Cap on cleaned text sent to the LLM (chars). Longer pages are truncated.
+  max_text_chars: 60000
+  # Minimum seconds between Anthropic API calls (rate limiting).
+  api_min_interval_s: 1.5
+
+sources:
+  - url: https://qutechacademy.nl/master/thesis-projects/
+    name: QuTech Academy (TU Delft)
+  - url: https://quantumghent.github.io/studentinfo/thesis.html
+    name: Quantum Group Ghent
+  - url: https://www.ipa.fraunhofer.de/en/current-research/cyber-cognitive-intelligence-cci/quantencomputing/Theses-on-the-topic-of-quantum-computing.html
+    name: Fraunhofer IPA - Quantum Computing
+  - url: https://www.fisica.unimib.it/it/didattica/corsi-studio/corso-laurea-magistrale-fisica/argomenti-prova-finale-della-laurea-magistrale/proposte-tesi-laurea-magistrale-tecnologie-quantistiche
+    name: Università di Milano-Bicocca - Tecnologie Quantistiche
+  - url: https://icc.ub.edu/master_afpc/thesis/particles
+    name: ICC Universitat de Barcelona - Particles
+
+  # ---------------------------------------------------------------------
+  # Università degli Studi di Milano (La Statale) - Fisica magistrale
+  # ---------------------------------------------------------------------
+
+  # Hub e percorsi ufficiali del dipartimento
+  - url: https://fisica.unimi.it/it/tesi-di-laurea-fisica-della-materia-condensata
+    name: UniMi - Tesi Fisica della Materia Condensata (hub)
+  - url: https://sites.unimi.it/dataphysics/tesi-di-laurea/
+    name: UniMi - Fisica dei Dati - Tesi
+  - url: http://cosmo.fisica.unimi.it/didattica/tesi
+    name: UniMi - Gruppo di Cosmologia - Tesi
+  - url: https://qurriculum.unimi.it/tesi-di-laurea/
+    name: UniMi - Qurriculum (Quantum) - Tesi
+
+  # Gruppi e pagine personali docenti - materia condensata
+  - url: http://materia.fisica.unimi.it/~dgalli/TESI/
+    name: UniMi - Quantum Matter (D.E. Galli)
+  - url: https://sites.google.com/site/potenzaunimi/research
+    name: UniMi - Ottica e Light Scattering (Potenza)
+  - url: https://sites.google.com/site/paoloarosioncco/welcome/thesis/masterbachelor
+    name: UniMi - Magnetismo e Superconduttivita (Arosio)
+  - url: https://sites.google.com/view/pinifisicaunimi/home-page
+    name: UniMi - Materia Soffice (Pini)
+  - url: https://www0.mi.infn.it/~podesta/proposte_tesi/proposte_tesi.html
+    name: UniMi - Microscopie a Scansione di Sonda (Podesta)
+  - url: https://sites.google.com/site/pssptg/thesis-projects/thesis-nanodesign
+    name: UniMi - Nanodesign (PSSP Theory Group)
+  - url: https://sites.google.com/site/pssptg/thesis-projects/thesis-electronicprop
+    name: UniMi - Struttura Elettronica ab initio (PSSP Theory Group)
+  - url: https://cimaina2.fisica.unimi.it/students/
+    name: UniMi - CIMaINa (Smart Materials / Neuromorfica)
+  # Pagine su CryptPad (JS-rendered: richiedono il fallback Playwright)
+  - url: https://cryptpad.devol.it/pad/#/2/pad/view/gTZpgtgRWJgdBDveiWT+j1I9dvdBGSj6wNix9RsEzdQ/embed/
+    name: UniMi - Modellizzazione Statistica dei Materiali
+  - url: https://cryptpad.devol.it/pad/#/2/pad/view/X0nJinAIEc+tv56Z-7uNMlV1JXn0ZL2Hc2mMsZgfnjE/embed/
+    name: UniMi - Nanoattrito
+
+  # Quantum information / quantum technology
+  - url: https://sites.unimi.it/olivares/research/
+    name: UniMi - Quantum Technology Lab (Olivares) - Research
+  - url: https://sites.unimi.it/aqm/people/
+    name: UniMi - (P)AQM Group - People (contatti)
+
+  # INFN Sezione di Milano - opportunita di tesi per linea di ricerca
+  - url: https://www.mi.infn.it/it/tesi-fisica-particellare.html
+    name: INFN Milano - Tesi Fisica delle Particelle
+  - url: https://www.mi.infn.it/it/tesi-fisica-astroparticellare.html
+    name: INFN Milano - Tesi Fisica delle Astroparticelle
+  - url: https://www.mi.infn.it/it/tesi-fisica-nucleare.html
+    name: INFN Milano - Tesi Fisica Nucleare
+  - url: https://www.mi.infn.it/it/tesi-fisica-teorica.html
+    name: INFN Milano - Tesi Fisica Teorica
+  - url: https://www.mi.infn.it/it/tesi-ricerca-tecnologica.html
+    name: INFN Milano - Tesi Ricerca Tecnologica
+  - url: https://www.mi.infn.it/it/tesi-progetti-speciali.html
+    name: INFN Milano - Tesi Progetti Speciali

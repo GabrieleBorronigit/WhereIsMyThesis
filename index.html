@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhereIsMyThesis — Master thesis proposals in physics &amp; quantum computing</title>
+<meta name="description" content="Aggregated master thesis proposals in physics and quantum computing from universities and research labs worldwide.">
+<style>
+  :root {
+    --bg: #0f0f0f;
+    --card: #1a1a1a;
+    --card-hover: #202020;
+    --text: #e0e0e0;
+    --text-dim: #9a9a9a;
+    --text-faint: #6b6b6b;
+    --accent: #7c6af7;
+    --accent-dim: rgba(124, 106, 247, 0.12);
+    --border: #2a2a2a;
+    --contact: #d4a24e;
+    --contact-dim: rgba(212, 162, 78, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Header ---------- */
+  header { padding: 56px 0 28px; }
+
+  header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  header h1 .accent { color: var(--accent); }
+
+  header p.subtitle {
+    color: var(--text-dim);
+    margin-top: 6px;
+    font-size: 15px;
+  }
+
+  /* ---------- Toolbar ---------- */
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(15, 15, 15, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+  }
+
+  .toolbar-inner {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  #search {
+    flex: 1 1 260px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 9px 14px;
+    color: var(--text);
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  #search:focus { border-color: var(--accent); }
+  #search::placeholder { color: var(--text-faint); }
+
+  .toolbar select {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 9px 12px;
+    color: var(--text);
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    max-width: 220px;
+    transition: border-color 0.15s;
+  }
+  .toolbar select:focus { border-color: var(--accent); }
+
+  #result-count {
+    color: var(--text-faint);
+    font-size: 13px;
+    white-space: nowrap;
+    margin-left: auto;
+  }
+
+  #clear-filters {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 4px;
+    display: none;
+  }
+  #clear-filters:hover { text-decoration: underline; }
+
+  /* ---------- Sections ---------- */
+  main { padding: 12px 0 80px; }
+
+  section.category { margin-top: 44px; }
+
+  section.category > h2 {
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  section.category > h2 .count {
+    color: var(--text-faint);
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  /* ---------- Cards ---------- */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .card:hover { border-color: #3a3a3a; background: var(--card-hover); }
+
+  .card .badges { display: flex; gap: 6px; flex-wrap: wrap; }
+
+  .badge {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: 3px 9px;
+    border-radius: 99px;
+    white-space: nowrap;
+  }
+  .badge.type-proposal { background: var(--accent-dim); color: var(--accent); }
+  .badge.type-contact  { background: var(--contact-dim); color: var(--contact); }
+  .badge.cat {
+    background: transparent;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+  }
+
+  .card h3 {
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+
+  .card .meta {
+    font-size: 13px;
+    color: var(--text-dim);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .card .meta .inst { color: var(--text); font-weight: 500; }
+
+  .card .desc {
+    font-size: 13.5px;
+    color: var(--text-dim);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .card .desc.expanded { -webkit-line-clamp: unset; display: block; }
+  .card .desc:hover { color: var(--text); }
+
+  .card .expand-hint {
+    font-size: 11.5px;
+    color: var(--text-faint);
+    cursor: pointer;
+    user-select: none;
+  }
+  .card .expand-hint:hover { color: var(--accent); }
+
+  .card .links {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+  }
+  .card .links a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .card .links a:hover { text-decoration: underline; }
+  .card .links a.dim { color: var(--text-dim); }
+  .card .links a.dim:hover { color: var(--text); }
+
+  /* ---------- Empty state / footer ---------- */
+  #empty-state {
+    display: none;
+    text-align: center;
+    color: var(--text-faint);
+    padding: 80px 0;
+    font-size: 14px;
+  }
+
+  #load-error {
+    display: none;
+    text-align: center;
+    color: var(--contact);
+    padding: 12px 0 0;
+    font-size: 13px;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 0 40px;
+    color: var(--text-faint);
+    font-size: 13px;
+  }
+
+  @media (max-width: 600px) {
+    header { padding: 36px 0 20px; }
+    .grid { grid-template-columns: 1fr; }
+    #result-count { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <h1>WhereIsMy<span class="accent">Thesis</span></h1>
+  <p class="subtitle">Master thesis proposals in physics &amp; quantum computing, aggregated from universities and research labs worldwide.</p>
+  <p id="load-error">Could not load <code>proposals.json</code> — showing bundled sample data.</p>
+</header>
+
+<div class="toolbar">
+  <div class="wrap toolbar-inner">
+    <input id="search" type="search" placeholder="Search title, supervisor, institution, keywords…" autocomplete="off">
+    <select id="filter-country"><option value="">All countries</option></select>
+    <select id="filter-institution"><option value="">All institutions</option></select>
+    <button id="clear-filters">Clear</button>
+    <span id="result-count"></span>
+  </div>
+</div>
+
+<main class="wrap">
+  <div id="sections"></div>
+  <div id="empty-state">No proposals match your filters.</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    WhereIsMyThesis — data is scraped automatically from public university pages and may be outdated; always check the original source.
+  </div>
+</footer>
+
+<script>
+"use strict";
+
+/* Section order. "HEP" in the data is displayed as "High Energy Physics". */
+const CATEGORIES = [
+  "Quantum Algorithms", "Quantum Hardware", "Quantum Error Correction",
+  "Quantum ML", "Quantum Communication", "Quantum Sensing",
+  "Condensed Matter", "HEP", "Quantum Optics"
+];
+const CATEGORY_LABELS = { "HEP": "High Energy Physics" };
+const UNCATEGORIZED = "Other";
+
+/* Fallback sample data, used when fetch fails (e.g. opening via file://,
+   where browsers block local fetch). Mirrors proposals.json. */
+const SAMPLE_DATA = [
+  {
+    "title": "Decoding algorithms for surface codes under realistic noise",
+    "supervisor": "Dr. Anna Verhoeven",
+    "email": "a.verhoeven@tudelft.nl",
+    "institution": "QuTech, TU Delft",
+    "country": "Netherlands",
+    "description": "Surface codes are the leading candidate for fault-tolerant quantum computation, but their performance depends critically on the decoder. This project explores neural-network and union-find decoders under circuit-level noise models calibrated on real superconducting hardware, benchmarking logical error rates and decoding latency against minimum-weight perfect matching.",
+    "category": ["Quantum Error Correction", "Quantum Hardware"],
+    "is_explicit_proposal": true,
+    "source_url": "https://qutechacademy.nl/master/thesis-projects/"
+  },
+  {
+    "title": "Variational quantum algorithms for lattice gauge theories",
+    "supervisor": "Prof. Karel De Smet",
+    "email": "karel.desmet@ugent.be",
+    "institution": "Ghent University",
+    "country": "Belgium",
+    "description": "Simulating lattice gauge theories is a promising near-term application of quantum computers. The student will design and benchmark variational ansätze for (1+1)D and (2+1)D gauge theories, studying trainability, barren plateaus, and symmetry-preserving circuit constructions, with numerical experiments on tensor-network simulators.",
+    "category": ["Quantum Algorithms", "HEP"],
+    "is_explicit_proposal": true,
+    "source_url": "https://quantumghent.github.io/studentinfo/thesis.html"
+  },
+  {
+    "title": "Quantum kernel methods for industrial anomaly detection",
+    "supervisor": "Dr. Lena Hartmann",
+    "email": "lena.hartmann@ipa.fraunhofer.de",
+    "institution": "Fraunhofer IPA",
+    "country": "Germany",
+    "description": "Quantum kernels promise expressive feature maps for machine learning, but their practical advantage is unclear. This thesis evaluates quantum kernel methods against classical baselines on real industrial sensor data for anomaly detection, including a study of kernel concentration effects and hardware noise on IBM Quantum devices.",
+    "category": ["Quantum ML"],
+    "is_explicit_proposal": true,
+    "source_url": "https://www.ipa.fraunhofer.de/en/current-research/cyber-cognitive-intelligence-cci/quantencomputing/Theses-on-the-topic-of-quantum-computing.html"
+  },
+  {
+    "title": "Entanglement distribution over metropolitan fiber networks",
+    "supervisor": "Prof. Marco Bellini",
+    "email": "marco.bellini@unimib.it",
+    "institution": "Università di Milano-Bicocca",
+    "country": "Italy",
+    "description": "The project studies protocols for distributing entangled photon pairs over deployed telecom fiber in a metropolitan testbed, characterizing decoherence, timing synchronization, and Bell-inequality violation as a function of link length, in view of future quantum repeater architectures.",
+    "category": ["Quantum Communication", "Quantum Optics"],
+    "is_explicit_proposal": true,
+    "source_url": "https://www.fisica.unimib.it/it/didattica/corsi-studio/corso-laurea-magistrale-fisica/argomenti-prova-finale-della-laurea-magistrale/proposte-tesi-laurea-magistrale-tecnologie-quantistiche"
+  },
+  {
+    "title": "NV-center magnetometry for condensed matter systems",
+    "supervisor": "Dr. Sofia Ekström",
+    "email": "sofia.ekstrom@chalmers.se",
+    "institution": "Chalmers University of Technology",
+    "country": "Sweden",
+    "description": "Nitrogen-vacancy centers in diamond enable nanoscale magnetic imaging at room temperature. The thesis develops pulse sequences for wide-field NV magnetometry and applies them to image stray fields of 2D magnetic materials, combining optics lab work with data analysis and spin-physics modelling.",
+    "category": ["Quantum Sensing", "Condensed Matter"],
+    "is_explicit_proposal": true,
+    "source_url": "https://www.chalmers.se/en/departments/mc2/education/master-thesis-proposals/"
+  },
+  {
+    "title": null,
+    "supervisor": "Prof. Núria Ferrer",
+    "email": "nferrer@icc.ub.edu",
+    "institution": "ICC, Universitat de Barcelona",
+    "country": "Spain",
+    "description": "Research group in theoretical particle physics: phenomenology of the Standard Model and beyond, effective field theories, and collider physics. Open to supervising master theses — contact by email to discuss available topics.",
+    "category": ["HEP"],
+    "is_explicit_proposal": false,
+    "source_url": "https://icc.ub.edu/master_afpc/thesis/particles"
+  }
+];
+
+let proposals = [];
+
+/* category can arrive as a string or an array; normalize to array */
+function categoriesOf(p) {
+  const c = p.category;
+  if (!c) return [UNCATEGORIZED];
+  const arr = Array.isArray(c) ? c : [c];
+  return arr.length ? arr : [UNCATEGORIZED];
+}
+
+function esc(s) {
+  const div = document.createElement("div");
+  div.textContent = s == null ? "" : String(s);
+  return div.innerHTML;
+}
+
+/* Precomputed lowercase haystack for free-text search */
+function haystack(p) {
+  return [p.title, p.supervisor, p.institution, p.country, p.description,
+          ...categoriesOf(p)].filter(Boolean).join(" ").toLowerCase();
+}
+
+function buildCard(p, idx) {
+  const isProposal = p.is_explicit_proposal !== false;
+  const typeBadge = isProposal
+    ? '<span class="badge type-proposal">Thesis proposal</span>'
+    : '<span class="badge type-contact">Contact</span>';
+  const catBadges = categoriesOf(p)
+    .map(c => `<span class="badge cat">${esc(CATEGORY_LABELS[c] || c)}</span>`).join("");
+
+  const title = p.title || (isProposal ? "Untitled proposal" : (p.supervisor || "Research contact"));
+
+  const metaParts = [];
+  if (p.institution) metaParts.push(`<span class="inst">${esc(p.institution)}${p.country ? " · " + esc(p.country) : ""}</span>`);
+  else if (p.country) metaParts.push(`<span class="inst">${esc(p.country)}</span>`);
+  if (p.supervisor && p.title) metaParts.push(`<span>Supervisor: ${esc(p.supervisor)}</span>`);
+
+  const links = [];
+  if (p.email) links.push(`<a href="mailto:${esc(p.email)}">✉ Contact</a>`);
+  if (p.source_url) links.push(`<a class="dim" href="${esc(p.source_url)}" target="_blank" rel="noopener noreferrer">Source ↗</a>`);
+
+  return `
+    <article class="card" data-idx="${idx}">
+      <div class="badges">${typeBadge}${catBadges}</div>
+      <h3>${esc(title)}</h3>
+      ${metaParts.length ? `<div class="meta">${metaParts.join("")}</div>` : ""}
+      ${p.description ? `
+        <p class="desc" title="Click to expand">${esc(p.description)}</p>
+        <span class="expand-hint">show more</span>` : ""}
+      ${links.length ? `<div class="links">${links.join("")}</div>` : ""}
+    </article>`;
+}
+
+function render() {
+  const container = document.getElementById("sections");
+  const order = [...CATEGORIES];
+  // Append any category present in the data but not in the known list (incl. "Other")
+  const known = new Set(order);
+  proposals.forEach(p => categoriesOf(p).forEach(c => {
+    if (!known.has(c)) { known.add(c); order.push(c); }
+  }));
+
+  container.innerHTML = order.map(cat => {
+    const items = proposals
+      .map((p, idx) => ({ p, idx }))
+      .filter(({ p }) => categoriesOf(p).includes(cat));
+    if (!items.length) return "";
+    return `
+      <section class="category" data-cat="${esc(cat)}">
+        <h2>${esc(CATEGORY_LABELS[cat] || cat)} <span class="count"></span></h2>
+        <div class="grid">${items.map(({ p, idx }) => buildCard(p, idx)).join("")}</div>
+      </section>`;
+  }).join("");
+
+  // Expand/collapse descriptions (delegated)
+  container.addEventListener("click", e => {
+    const card = e.target.closest(".card");
+    if (!card) return;
+    if (e.target.classList.contains("desc") || e.target.classList.contains("expand-hint")) {
+      const desc = card.querySelector(".desc");
+      const hint = card.querySelector(".expand-hint");
+      const expanded = desc.classList.toggle("expanded");
+      if (hint) hint.textContent = expanded ? "show less" : "show more";
+    }
+  });
+
+  applyFilters();
+}
+
+function populateDropdowns() {
+  const fill = (id, values) => {
+    const sel = document.getElementById(id);
+    [...values].sort((a, b) => a.localeCompare(b)).forEach(v => {
+      const opt = document.createElement("option");
+      opt.value = v;
+      opt.textContent = v;
+      sel.appendChild(opt);
+    });
+  };
+  fill("filter-country", new Set(proposals.map(p => p.country).filter(Boolean)));
+  fill("filter-institution", new Set(proposals.map(p => p.institution).filter(Boolean)));
+}
+
+function applyFilters() {
+  const q = document.getElementById("search").value.trim().toLowerCase();
+  const country = document.getElementById("filter-country").value;
+  const institution = document.getElementById("filter-institution").value;
+
+  const visibleIdx = new Set();
+  proposals.forEach((p, idx) => {
+    if (country && p.country !== country) return;
+    if (institution && p.institution !== institution) return;
+    if (q && !haystacks[idx].includes(q)) return;
+    visibleIdx.add(idx);
+  });
+
+  // Show/hide cards; a card is duplicated across its categories, all copies follow
+  document.querySelectorAll(".card").forEach(card => {
+    card.style.display = visibleIdx.has(Number(card.dataset.idx)) ? "" : "none";
+  });
+
+  // Hide sections with no visible cards, update per-section counts
+  let anyVisible = false;
+  document.querySelectorAll("section.category").forEach(sec => {
+    const n = [...sec.querySelectorAll(".card")]
+      .filter(c => c.style.display !== "none").length;
+    sec.style.display = n ? "" : "none";
+    sec.querySelector(".count").textContent = n ? `${n} ${n === 1 ? "entry" : "entries"}` : "";
+    if (n) anyVisible = true;
+  });
+
+  document.getElementById("empty-state").style.display = anyVisible ? "none" : "block";
+  document.getElementById("result-count").textContent =
+    `${visibleIdx.size} of ${proposals.length} entries`;
+  document.getElementById("clear-filters").style.display =
+    (q || country || institution) ? "inline" : "none";
+}
+
+let haystacks = [];
+
+function init(data) {
+  proposals = Array.isArray(data) ? data : [];
+  haystacks = proposals.map(haystack);
+  populateDropdowns();
+  render();
+
+  document.getElementById("search").addEventListener("input", applyFilters);
+  document.getElementById("filter-country").addEventListener("change", applyFilters);
+  document.getElementById("filter-institution").addEventListener("change", applyFilters);
+  document.getElementById("clear-filters").addEventListener("click", () => {
+    document.getElementById("search").value = "";
+    document.getElementById("filter-country").value = "";
+    document.getElementById("filter-institution").value = "";
+    applyFilters();
+  });
+}
+
+fetch("proposals.json")
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(init)
+  .catch(() => {
+    /* file:// or missing file: fall back to bundled sample so the page
+       always renders something */
+    document.getElementById("load-error").style.display = "block";
+    init(SAMPLE_DATA);
+  });
+</script>
+</body>
+</html>

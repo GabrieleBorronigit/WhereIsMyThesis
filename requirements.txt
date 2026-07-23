@@ -1,0 +1,8 @@
+requests>=2.31
+beautifulsoup4>=4.12
+playwright>=1.44
+anthropic>=0.34
+pyyaml>=6.0
+pydantic>=2.7
+
+# After install, run once: playwright install chromium

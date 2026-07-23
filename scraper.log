@@ -1,0 +1,69 @@
+2026-07-23 18:28:36,737 INFO    Scraping: https://qutechacademy.nl/master/thesis-projects/
+2026-07-23 18:28:37,245 INFO    Fetched 6162 chars (playwright=False): https://qutechacademy.nl/master/thesis-projects/
+2026-07-23 18:28:37,743 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:28:37,745 WARNING API error (attempt 1/4) for https://qutechacademy.nl/master/thesis-projects/: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJeb5s5GEw6Bez6VMAo'}
+2026-07-23 18:28:44,072 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:28:44,073 WARNING API error (attempt 2/4) for https://qutechacademy.nl/master/thesis-projects/: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJf3DEpMhBTdaEy5PS4'}
+2026-07-23 18:28:54,410 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:28:54,412 WARNING API error (attempt 3/4) for https://qutechacademy.nl/master/thesis-projects/: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJfpscJaN8hmjLcv378'}
+2026-07-23 18:29:09,775 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:29:09,777 WARNING API error (attempt 4/4) for https://qutechacademy.nl/master/thesis-projects/: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJgxR4kUwApQhGiNngv'}
+2026-07-23 18:29:09,777 ERROR   LLM extraction failed for https://qutechacademy.nl/master/thesis-projects/ after 4 attempts
+2026-07-23 18:29:09,780 INFO    OK: https://qutechacademy.nl/master/thesis-projects/ -> 0 entries (0 explicit proposals, 0 contacts)
+2026-07-23 18:29:09,781 INFO    Scraping: https://quantumghent.github.io/studentinfo/thesis.html
+2026-07-23 18:29:10,142 INFO    Fetched 55489 chars (playwright=False): https://quantumghent.github.io/studentinfo/thesis.html
+2026-07-23 18:29:11,741 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:29:11,743 WARNING API error (attempt 1/4) for https://quantumghent.github.io/studentinfo/thesis.html: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJh6MZGPriuMvqPLkHG'}
+2026-07-23 18:29:17,475 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:29:17,478 WARNING API error (attempt 2/4) for https://quantumghent.github.io/studentinfo/thesis.html: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJhWTtfF9jppK44h74M'}
+2026-07-23 18:29:28,257 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:29:28,260 WARNING API error (attempt 3/4) for https://quantumghent.github.io/studentinfo/thesis.html: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJiJW5beniEYEwf4PyU'}
+2026-07-23 18:29:43,871 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:29:43,873 WARNING API error (attempt 4/4) for https://quantumghent.github.io/studentinfo/thesis.html: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJjTjz8PK4uqzZ2cJLr'}
+2026-07-23 18:29:43,873 ERROR   LLM extraction failed for https://quantumghent.github.io/studentinfo/thesis.html after 4 attempts
+2026-07-23 18:29:43,876 INFO    OK: https://quantumghent.github.io/studentinfo/thesis.html -> 0 entries (0 explicit proposals, 0 contacts)
+2026-07-23 18:29:43,877 INFO    Scraping: https://www.ipa.fraunhofer.de/en/current-research/cyber-cognitive-intelligence-cci/quantencomputing/Theses-on-the-topic-of-quantum-computing.html
+2026-07-23 18:29:44,513 INFO    Fetched 4331 chars (playwright=False): https://www.ipa.fraunhofer.de/en/current-research/cyber-cognitive-intelligence-cci/quantencomputing/Theses-on-the-topic-of-quantum-computing.html
+2026-07-23 18:29:45,815 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:29:45,817 WARNING API error (attempt 1/4) for https://www.ipa.fraunhofer.de/en/current-research/cyber-cognitive-intelligence-cci/quantencomputing/Theses-on-the-topic-of-quantum-computing.html: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJjbu7vY4twikhmSWyQ'}
+2026-07-23 18:29:51,119 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:29:51,121 WARNING API error (attempt 2/4) for https://www.ipa.fraunhofer.de/en/current-research/cyber-cognitive-intelligence-cci/quantencomputing/Theses-on-the-topic-of-quantum-computing.html: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJk11vH7VawGnoeLDUg'}
+2026-07-23 18:30:01,590 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:30:01,592 WARNING API error (attempt 3/4) for https://www.ipa.fraunhofer.de/en/current-research/cyber-cognitive-intelligence-cci/quantencomputing/Theses-on-the-topic-of-quantum-computing.html: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJkmGxNXwwrAxuew2DT'}
+2026-07-23 18:30:17,047 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:30:17,049 WARNING API error (attempt 4/4) for https://www.ipa.fraunhofer.de/en/current-research/cyber-cognitive-intelligence-cci/quantencomputing/Theses-on-the-topic-of-quantum-computing.html: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJmuUMHvfRf51EXvNiu'}
+2026-07-23 18:30:17,049 ERROR   LLM extraction failed for https://www.ipa.fraunhofer.de/en/current-research/cyber-cognitive-intelligence-cci/quantencomputing/Theses-on-the-topic-of-quantum-computing.html after 4 attempts
+2026-07-23 18:30:17,052 INFO    OK: https://www.ipa.fraunhofer.de/en/current-research/cyber-cognitive-intelligence-cci/quantencomputing/Theses-on-the-topic-of-quantum-computing.html -> 0 entries (0 explicit proposals, 0 contacts)
+2026-07-23 18:30:17,053 INFO    Scraping: https://www.fisica.unimib.it/it/didattica/corsi-studio/corso-laurea-magistrale-fisica/argomenti-prova-finale-della-laurea-magistrale/proposte-tesi-laurea-magistrale-tecnologie-quantistiche
+2026-07-23 18:30:17,302 INFO    Fetched 12864 chars (playwright=False): https://www.fisica.unimib.it/it/didattica/corsi-studio/corso-laurea-magistrale-fisica/argomenti-prova-finale-della-laurea-magistrale/proposte-tesi-laurea-magistrale-tecnologie-quantistiche
+2026-07-23 18:30:19,070 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:30:19,071 WARNING API error (attempt 1/4) for https://www.fisica.unimib.it/it/didattica/corsi-studio/corso-laurea-magistrale-fisica/argomenti-prova-finale-della-laurea-magistrale/proposte-tesi-laurea-magistrale-tecnologie-quantistiche: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJn4NPbsGsxnEShx7Dk'}
+2026-07-23 18:30:25,240 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:30:25,242 WARNING API error (attempt 2/4) for https://www.fisica.unimib.it/it/didattica/corsi-studio/corso-laurea-magistrale-fisica/argomenti-prova-finale-della-laurea-magistrale/proposte-tesi-laurea-magistrale-tecnologie-quantistiche: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJnVh9P5dLCFG6we5kW'}
+2026-07-23 18:30:35,564 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:30:35,566 WARNING API error (attempt 3/4) for https://www.fisica.unimib.it/it/didattica/corsi-studio/corso-laurea-magistrale-fisica/argomenti-prova-finale-della-laurea-magistrale/proposte-tesi-laurea-magistrale-tecnologie-quantistiche: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJoH6PK3qPAjrgrEMNG'}
+2026-07-23 18:30:51,113 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:30:51,116 WARNING API error (attempt 4/4) for https://www.fisica.unimib.it/it/didattica/corsi-studio/corso-laurea-magistrale-fisica/argomenti-prova-finale-della-laurea-magistrale/proposte-tesi-laurea-magistrale-tecnologie-quantistiche: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJpRKX2ntyaQFHuVpxQ'}
+2026-07-23 18:30:51,116 ERROR   LLM extraction failed for https://www.fisica.unimib.it/it/didattica/corsi-studio/corso-laurea-magistrale-fisica/argomenti-prova-finale-della-laurea-magistrale/proposte-tesi-laurea-magistrale-tecnologie-quantistiche after 4 attempts
+2026-07-23 18:30:51,118 INFO    OK: https://www.fisica.unimib.it/it/didattica/corsi-studio/corso-laurea-magistrale-fisica/argomenti-prova-finale-della-laurea-magistrale/proposte-tesi-laurea-magistrale-tecnologie-quantistiche -> 0 entries (0 explicit proposals, 0 contacts)
+2026-07-23 18:30:51,120 INFO    Scraping: https://icc.ub.edu/master_afpc/thesis/particles
+2026-07-23 18:30:52,713 INFO    Fetched 45002 chars (playwright=False): https://icc.ub.edu/master_afpc/thesis/particles
+2026-07-23 18:30:53,808 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:30:53,810 WARNING API error (attempt 1/4) for https://icc.ub.edu/master_afpc/thesis/particles: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJpamYLxkmEYjWHJBRC'}
+2026-07-23 18:30:59,552 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:30:59,554 WARNING API error (attempt 2/4) for https://icc.ub.edu/master_afpc/thesis/particles: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJq2w9dVhxHQ5tvRMyg'}
+2026-07-23 18:31:10,263 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:31:10,265 WARNING API error (attempt 3/4) for https://icc.ub.edu/master_afpc/thesis/particles: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJqq7mvZL1D2jTe3PZ9'}
+2026-07-23 18:31:25,826 INFO    HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-07-23 18:31:25,828 WARNING API error (attempt 4/4) for https://icc.ub.edu/master_afpc/thesis/particles: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CdKJryiykzbwss5WrLRY6'}
+2026-07-23 18:31:25,828 ERROR   LLM extraction failed for https://icc.ub.edu/master_afpc/thesis/particles after 4 attempts
+2026-07-23 18:31:25,831 INFO    OK: https://icc.ub.edu/master_afpc/thesis/particles -> 0 entries (0 explicit proposals, 0 contacts)
+2026-07-23 18:31:25,833 INFO    Wrote 0 entries to proposals.json
+2026-07-23 18:31:25,833 INFO    Done: 5 ok, 0 failed (of 5 sources)
+2026-07-23 18:45:08,724 INFO    SKIP (fresh, <7d): https://qutechacademy.nl/master/thesis-projects/
+2026-07-23 18:45:08,724 INFO    SKIP (fresh, <7d): https://quantumghent.github.io/studentinfo/thesis.html
+2026-07-23 18:45:08,725 INFO    SKIP (fresh, <7d): https://www.ipa.fraunhofer.de/en/current-research/cyber-cognitive-intelligence-cci/quantencomputing/Theses-on-the-topic-of-quantum-computing.html
+2026-07-23 18:45:08,725 INFO    SKIP (fresh, <7d): https://www.fisica.unimib.it/it/didattica/corsi-studio/corso-laurea-magistrale-fisica/argomenti-prova-finale-della-laurea-magistrale/proposte-tesi-laurea-magistrale-tecnologie-quantistiche
+2026-07-23 18:45:08,725 INFO    SKIP (fresh, <7d): https://icc.ub.edu/master_afpc/thesis/particles
+2026-07-23 18:45:08,726 INFO    Wrote 0 entries to proposals.json
+2026-07-23 18:45:08,726 INFO    Done: 5 ok, 0 failed (of 5 sources)
