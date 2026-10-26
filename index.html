@@ -265,7 +265,7 @@
 <header class="wrap">
   <h1>WhereIsMy<span class="accent">Thesis</span></h1>
   <p class="subtitle">Master thesis proposals in physics &amp; quantum computing, aggregated from universities and research labs worldwide.</p>
-  <p id="load-error">Could not load <code>proposals.json</code> — showing bundled sample data.</p>
+  <p id="load-error">Could not load <code>proposals.json</code> — showing made-up demo data, not real proposals.</p>
 </header>
 
 <div class="toolbar">
@@ -302,73 +302,74 @@ const CATEGORY_LABELS = { "HEP": "High Energy Physics" };
 const UNCATEGORIZED = "Other";
 
 /* Fallback sample data, used when fetch fails (e.g. opening via file://,
-   where browsers block local fetch). Mirrors proposals.json. */
+   where browsers block local fetch). These are made-up demo entries,
+   not real proposals or real people. */
 const SAMPLE_DATA = [
   {
     "title": "Decoding algorithms for surface codes under realistic noise",
-    "supervisor": "Dr. Anna Verhoeven",
-    "email": "a.verhoeven@tudelft.nl",
-    "institution": "QuTech, TU Delft",
+    "supervisor": "Dr. Jane Doe",
+    "email": "jane.doe@example.org",
+    "institution": "Example Institute of Technology",
     "country": "Netherlands",
     "description": "Surface codes are the leading candidate for fault-tolerant quantum computation, but their performance depends critically on the decoder. This project explores neural-network and union-find decoders under circuit-level noise models calibrated on real superconducting hardware, benchmarking logical error rates and decoding latency against minimum-weight perfect matching.",
     "category": ["Quantum Error Correction", "Quantum Hardware"],
     "is_explicit_proposal": true,
-    "source_url": "https://qutechacademy.nl/master/thesis-projects/"
+    "source_url": "https://example.org/theses"
   },
   {
     "title": "Variational quantum algorithms for lattice gauge theories",
-    "supervisor": "Prof. Karel De Smet",
-    "email": "karel.desmet@ugent.be",
-    "institution": "Ghent University",
+    "supervisor": "Prof. John Smith",
+    "email": "john.smith@example.org",
+    "institution": "University of Examples",
     "country": "Belgium",
     "description": "Simulating lattice gauge theories is a promising near-term application of quantum computers. The student will design and benchmark variational ansätze for (1+1)D and (2+1)D gauge theories, studying trainability, barren plateaus, and symmetry-preserving circuit constructions, with numerical experiments on tensor-network simulators.",
     "category": ["Quantum Algorithms", "HEP"],
     "is_explicit_proposal": true,
-    "source_url": "https://quantumghent.github.io/studentinfo/thesis.html"
+    "source_url": "https://example.org/thesis-topics"
   },
   {
     "title": "Quantum kernel methods for industrial anomaly detection",
-    "supervisor": "Dr. Lena Hartmann",
-    "email": "lena.hartmann@ipa.fraunhofer.de",
-    "institution": "Fraunhofer IPA",
+    "supervisor": "Dr. Erika Mustermann",
+    "email": "erika.mustermann@example.org",
+    "institution": "Example Research Lab",
     "country": "Germany",
     "description": "Quantum kernels promise expressive feature maps for machine learning, but their practical advantage is unclear. This thesis evaluates quantum kernel methods against classical baselines on real industrial sensor data for anomaly detection, including a study of kernel concentration effects and hardware noise on IBM Quantum devices.",
     "category": ["Quantum ML"],
     "is_explicit_proposal": true,
-    "source_url": "https://www.ipa.fraunhofer.de/en/current-research/cyber-cognitive-intelligence-cci/quantencomputing/Theses-on-the-topic-of-quantum-computing.html"
+    "source_url": "https://example.org/lab/theses"
   },
   {
     "title": "Entanglement distribution over metropolitan fiber networks",
-    "supervisor": "Prof. Marco Bellini",
-    "email": "marco.bellini@unimib.it",
-    "institution": "Università di Milano-Bicocca",
+    "supervisor": "Prof. Mario Rossi",
+    "email": "mario.rossi@example.org",
+    "institution": "Università degli Esempi",
     "country": "Italy",
     "description": "The project studies protocols for distributing entangled photon pairs over deployed telecom fiber in a metropolitan testbed, characterizing decoherence, timing synchronization, and Bell-inequality violation as a function of link length, in view of future quantum repeater architectures.",
     "category": ["Quantum Communication", "Quantum Optics"],
     "is_explicit_proposal": true,
-    "source_url": "https://www.fisica.unimib.it/it/didattica/corsi-studio/corso-laurea-magistrale-fisica/argomenti-prova-finale-della-laurea-magistrale/proposte-tesi-laurea-magistrale-tecnologie-quantistiche"
+    "source_url": "https://example.org/tesi"
   },
   {
     "title": "NV-center magnetometry for condensed matter systems",
-    "supervisor": "Dr. Sofia Ekström",
-    "email": "sofia.ekstrom@chalmers.se",
-    "institution": "Chalmers University of Technology",
+    "supervisor": "Dr. Anna Svensson",
+    "email": "anna.svensson@example.org",
+    "institution": "Example University of Technology",
     "country": "Sweden",
     "description": "Nitrogen-vacancy centers in diamond enable nanoscale magnetic imaging at room temperature. The thesis develops pulse sequences for wide-field NV magnetometry and applies them to image stray fields of 2D magnetic materials, combining optics lab work with data analysis and spin-physics modelling.",
     "category": ["Quantum Sensing", "Condensed Matter"],
     "is_explicit_proposal": true,
-    "source_url": "https://www.chalmers.se/en/departments/mc2/education/master-thesis-proposals/"
+    "source_url": "https://example.org/mc2/theses"
   },
   {
     "title": null,
-    "supervisor": "Prof. Núria Ferrer",
-    "email": "nferrer@icc.ub.edu",
-    "institution": "ICC, Universitat de Barcelona",
+    "supervisor": "Prof. Joan Garcia",
+    "email": "joan.garcia@example.org",
+    "institution": "Example Institute of Physics",
     "country": "Spain",
     "description": "Research group in theoretical particle physics: phenomenology of the Standard Model and beyond, effective field theories, and collider physics. Open to supervising master theses — contact by email to discuss available topics.",
     "category": ["HEP"],
     "is_explicit_proposal": false,
-    "source_url": "https://icc.ub.edu/master_afpc/thesis/particles"
+    "source_url": "https://example.org/particles/theses"
   }
 ];
 
